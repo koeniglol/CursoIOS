@@ -12,9 +12,55 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        NSString *mensaje= @"Hola de calculadora";
+        NSLog(@"%@", mensaje);
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        float primerValor;
+        scanf("%f", &primerValor);
+        
+        int opcion;
+        scanf("%d", &opcion);
+        
+        float segundoValor;
+        scanf("%f", &segundoValor);
+        
+        float resultado = 0;
+        switch (opcion) {
+            case 0:
+                resultado = primerValor + segundoValor;
+                break;
+            
+            case 1:
+                resultado = primerValor - segundoValor;
+                break;
+                
+            case 2:
+                resultado = primerValor * segundoValor;
+                break;
+                
+            case 3:
+                if(segundoValor != 0)
+                {
+                    resultado = primerValor / segundoValor;
+                } else
+                    NSLog(@"No se puede dividir entre cero.");
+                break;
+                
+            default:
+                NSLog(@"Opción no valida!");
+                break;
+        }
+        
+        
+        NSMutableArray *arrayOperaciones = [[NSMutableArray alloc] init];
+        
+        NSNumber *numero =[[NSNumber alloc]initWithFloat:resultado];
+        [arrayOperaciones addObject:numero];
+        
+        [arrayOperaciones count];
+        
+        
+        
         
     }
     return 0;
